@@ -61,13 +61,13 @@
 
 <div>
 <div><p>
-  OWL 2 网络本体描述语言， 非正式称为 OWL 2，是一个有正式定义含义的用于语义Web的本体描述语言。
-OWL 2 本体提供类、属性、个体和数据值，并被存储为语义Web文档。
-OWL 2 本体可以与在RDF内存储的信息一同使用，同时本体本身也主要以RDF文档的形式传输。
+  OWL 2 网络本体描述语言， 非正式称为 OWL 2，是一个为语义Web所开发的，有严格定义的本体描述语言。
+OWL 2 定义的本体提供类、属性、个体和数据值，并能被存储为语义Web文档。
+OWL 2 定义的本体可以与在RDF内存储的信息一同使用，其本身也主要以RDF文档的形式传输。
 OWL 2 <a href="http://www.w3.org/TR/2012/REC-owl2-overview-20121211/" title="Document Overview">文档概览</a>描述了OWL 2的概况，并也应该作为阅读其他 OWL 2 文档的前置准备。</p><p>
 <p>
-  本节引入提供易于理解的OWL 2介绍，包括来自其他学科的人的指导、如何使用
-  OWL 2来表达简单到更复杂信息的示例、OWL 2 如何管理本体，和OWL 2不同子语言之间的区别。</p></div>
+  本引入提供易于理解的OWL 2介绍，包括适用于不了解 OWL 的人的参考大纲、使用
+  OWL 2来表达简单到丰富信息的示例、OWL 2 如何管理本体，和OWL 2不同子语言之间的区别。</p></div>
 </div>
 
 <h2 class="no-toc no-num">
@@ -91,7 +91,7 @@ OWL 2 <a href="http://www.w3.org/TR/2012/REC-owl2-overview-20121211/" title="Doc
 <div></div>
  <h4 class="no-toc no-num" id="status-changes">更改概览</h4>
 <div>
-  自<a href="http://www.w3.org/TR/2012/PER-owl2-primer-20121018/">前一般本</a>发布后尚无<a href="http://www.w3.org/2005/10/Process-20051014/tr#substantive-change">实质性</a>更改。
+  自<a href="http://www.w3.org/TR/2012/PER-owl2-primer-20121018/">前一版本</a>发布后，尚无<a href="http://www.w3.org/2005/10/Process-20051014/tr#substantive-change">实质性</a>更改。
   如需获取小改动的详细信息请参阅<a href="#changelog">更改记录</a>和<a href="http://www.w3.org/TR/2012/REC-owl2-primer-20121211/diff-from-20121018">更改高亮</a>。
 </div>
 
@@ -99,15 +99,15 @@ OWL 2 <a href="http://www.w3.org/TR/2012/REC-owl2-overview-20121211/" title="Doc
   <p>
     请将评论发送至 <a class="mailto" href="mailto:public-owl-comments@w3.org">public-owl-comments@w3.org</a>
     (<a class="http" href="http://lists.w3.org/Archives/Public/public-owl-comments/">公开存档</a>)。
-    尽管<a href="http://www.w3.org/2007/OWL/">OWL Working Group</a>已经完成本文档， 评论仍可以在<a href="http://www.w3.org/2007/OWL/errata">勘误表</a>或未来修订中发表。
-    欢迎在开发者在<a class="mailto" href="mailto:public-owl-dev@w3.org">public-owl-dev@w3.org</a> (<a class="http" href="http://lists.w3.org/Archives/Public/public-owl-dev/">公开存档</a>)中讨论。
+    尽管<a href="http://www.w3.org/2007/OWL/">OWL Working Group</a>已经完成本文档， 评论仍可以在<a href="http://www.w3.org/2007/OWL/errata">勘误表</a>或未来修订中被提及或解决。
+    欢迎开发者们在<a class="mailto" href="mailto:public-owl-dev@w3.org">public-owl-dev@w3.org</a> (<a class="http" href="http://lists.w3.org/Archives/Public/public-owl-dev/">公开存档</a>)中自由讨论。
   </p>
     
 <h4 class="no-toc no-num" id="endorsement">已获得W3C认可</h4>
 <p><em>
   本文档已通过W3C成员、软件开发者、其他W3C工作组和相关人士审核，并作为W3C推荐获得W3C理事认可。
   本文档已成为稳定文档，可以作为参考资料使用或被其他文档引用。
-  为标准提请注意并推进其应用是W3C做出推荐的作用。
+  W3C 做出推荐的目的是为标准吸引注意并推进其应用。
   本文档所涉技术能够增强万维网的功能和互操作性。
 </em></p>
 
@@ -221,29 +221,29 @@ function set_display_by_id(id, newValue) {
 <li class="toclevel-1"><a href="#Modeling_Knowledge:_Basic_Notions"><span class="tocnumber">3</span> <span class="toctext">建模知识：基本概念</span></a></li>
 <li class="toclevel-1"><a href="#Classes.2C_Properties.2C_and_Individuals_.E2.80.93_And_Basic_Modeling_With_Them"><span class="tocnumber">4</span> <span class="toctext">类, 属性, 和个体 – 还有使用他们的基础建模</span></a>
 <ul>
-<li class="toclevel-2"><a href="#Classes_and_Instances"><span class="tocnumber">4.1</span> <span class="toctext">类和实例</span></a></li>
+<li class="toclevel-2"><a href="#Classes_and_Instances"><span class="tocnumber">4.1</span> <span class="toctext">类及其实例</span></a></li>
 <li class="toclevel-2"><a href="#Class_Hierarchies"><span class="tocnumber">4.2</span> <span class="toctext">类的层次结构</span></a></li>
 <li class="toclevel-2"><a href="#Class_Disjointness"><span class="tocnumber">4.3</span> <span class="toctext">类的不交性</span></a></li>
 <li class="toclevel-2"><a href="#Object_Properties"><span class="tocnumber">4.4</span> <span class="toctext">对象的属性</span></a></li>
 <li class="toclevel-2"><a href="#Property_Hierarchies"><span class="tocnumber">4.5</span> <span class="toctext">属性的层次结构</span></a></li>
 <li class="toclevel-2"><a href="#Domain_and_Range_Restrictions"><span class="tocnumber">4.6</span> <span class="toctext">作用域和作用范围限制</span></a></li>
-<li class="toclevel-2"><a href="#Equality_and_Inequality_of_Individuals"><span class="tocnumber">4.7</span> <span class="toctext">个体间的相等性和不等性</span></a></li>
+<li class="toclevel-2"><a href="#Equality_and_Inequality_of_Individuals"><span class="tocnumber">4.7</span> <span class="toctext">实例间的相等性和不等性</span></a></li>
 <li class="toclevel-2"><a href="#Datatypes"><span class="tocnumber">4.8</span> <span class="toctext">数据类型</span></a></li>
 </ul>
 </li>
 <li class="toclevel-1"><a href="#Advanced_Class_Relationships"><span class="tocnumber">5</span> <span class="toctext">类关系进阶</span></a>
 <ul>
 <li class="toclevel-2"><a href="#Complex_Classes"><span class="tocnumber">5.1</span> <span class="toctext">复合类</span></a></li>
-<li class="toclevel-2"><a href="#Property_Restrictions"><span class="tocnumber">5.2</span> <span class="toctext">属性限制</span></a></li>
-<li class="toclevel-2"><a href="#Property_Cardinality_Restrictions"><span class="tocnumber">5.3</span> <span class="toctext">属性数量限制</span></a></li>
-<li class="toclevel-2"><a href="#Enumeration_of_Individuals"><span class="tocnumber">5.4</span> <span class="toctext">个体的枚举</span></a></li>
+<li class="toclevel-2"><a href="#Property_Restrictions"><span class="tocnumber">5.2</span> <span class="toctext">使用属性限制定义类</span></a></li>
+<li class="toclevel-2"><a href="#Property_Cardinality_Restrictions"><span class="tocnumber">5.3</span> <span class="toctext">对属性持有的值做出限制</span></a></li>
+<li class="toclevel-2"><a href="#Enumeration_of_Individuals"><span class="tocnumber">5.4</span> <span class="toctext">通过列举实例定义类</span></a></li>
 </ul>
 </li>
 <li class="toclevel-1"><a href="#Advanced_Use_of_Properties"><span class="tocnumber">6</span> <span class="toctext">属性的进阶用法</span></a>
 <ul>
 <li class="toclevel-2"><a href="#Property_Characteristics"><span class="tocnumber">6.1</span> <span class="toctext">属性性质</span></a></li>
 <li class="toclevel-2"><a href="#Property_Chains"><span class="tocnumber">6.2</span> <span class="toctext">属性链</span></a></li>
-<li class="toclevel-2"><a href="#Keys"><span class="tocnumber">6.3</span> <span class="toctext">键</span></a></li>
+<li class="toclevel-2"><a href="#Keys"><span class="tocnumber">6.3</span> <span class="toctext">关键字</span></a></li>
 </ul>
 </li>
 <li class="toclevel-1"><a href="#Advanced_Use_of_Datatypes"><span class="tocnumber">7</span> <span class="toctext">数据类型的进阶用法</span></a></li>
@@ -281,68 +281,69 @@ function set_display_by_id(id, newValue) {
 </p>
 <a id="Introduction" name="Introduction"></a><h2> <span class="mw-headline">1  介绍 </span></h2>
 <p>
-  W3C OWL 2 网络本体描述语言（简称 OWL）是一门语义Web语言，旨在描述丰富且复杂的信息、事物组和事物之间的关系。
-  OWL是一门可用计算机处理的基于逻辑的语言，以便计算机能理解以 OWL 描述的信息，并能验证其一致性或提取其內部隐藏的信息。
-  OWL 文档，被称为<span class="first term">本体</span>，可以被发布到万维网上，并可能引用其他本体或被其他本体引用。
+  W3C OWL 2 网络本体描述语言（简称 OWL）是一门为语义Web开发的语言，旨在描述丰富且复杂的信息、事物集合和事物之间的关系。
+  OWL 是一门基于逻辑的，可用计算机处理的语言，以便计算机理解使用 OWL 描述的信息，并验证其一致性或推断其隐含的信息。
+  OWL 文档，称为<span class="first term">本体</span>，可以被发布到万维网上，并可引用其他本体或被其他本体引用。
   OWL 是 W3C <a class="external text" href="http://www.w3.org/2001/sw/" rel="nofollow" title="http://www.w3.org/2001/sw/">语义Web</a>
   技术栈的一部分。该技术栈包括 RDF [<cite><a href="#ref-rdf-concepts" title="">RDF 概念</a></cite>] 和 SPARQL [<cite><a href="#ref-sparql" title="">SPARQL</a></cite>]。
 </p>
 <p>
-  本引入的关键目标在于帮助深入了解 OWL,以及它的强项和弱点。
-  本引入的核心内容为通过一个可行的示例来介绍大多数 OWL 的特性。
-  本引入中的大部分示例均来自一个示例本体（其在<a href="#Appendix:_The_Complete_Sample_Ontology" title="">一份附录</a>中被详细展示）。
-  此示例本体意在以容易理解的方式介绍 OWL 的语言特性，而非作为一个好的本体的示例。
+  本引入的主要目标在于帮助人们深入了解 OWL，以及它的强项和缺点。
+  本引入的核心内容为使用一个符合规范的示例来介绍 OWL 的主要特性。
+  本引入中的大部分示例均来自该示例本体（详见<a href="#Appendix:_The_Complete_Sample_Ontology" title="">附录：完整示例本体</a>）。
+  此示例本体旨在以容易理解的方式介绍 OWL 的语言特性，而非作为一个好的示例。
 </p>
-<a id="Guide_to_this_Document" name="Guide_to_this_Document"></a><h3> <span class="mw-headline">1.1 如何阅读本文档</span></h3>
+<a id="Guide_to_this_Document" name="Guide_to_this_Document"></a><h3> <span class="mw-headline">1.1 关于本文档</span></h3>
 <p>
-  本文档旨在提供 OWL 2 的初级理解，尤其是本文档应能被尚不熟悉本话题的人理解。
-  因此，我们将在第二节以给出一些 OWL 2 性质的顶层介绍。
+  本文档旨在提供对 OWL 2 的初级理解，特别针对尚不熟悉本话题的人。
+  因此，我们将在第二节以给出一些 OWL 2 性质的简要介绍。
   第三节将给出在信息呈现方面的一些非常基础的注解，并解释它们与 OWL 2 中的术语的联系。
   熟悉信息呈现和理解的读者可能仅需略读本节即可熟悉 OWL 2 中的术语。
 </p>
 <p>
-  第四到八节描述 OWL 提供的大部分语言特性，并从最基础的特性开始以循序渐进的方式介绍它们。
-  <a href="#Classes.2C_Properties.2C_and_Individuals_.E2.80.93_And_Basic_Modeling_With_Them" title="">第四节</a>将介绍并讨论用于建模的基本特性。
+  第四到八节将描述 OWL 的大部分特性，并以由浅入深的方式介绍它们。
+  <a href="#Classes.2C_Properties.2C_and_Individuals_.E2.80.93_And_Basic_Modeling_With_Them" title="">第四节</a>将介绍并讨论
+  OWL 在建模方面的基本特性。
   <a href="#Advanced_Class_Relationships" title="">第五节</a>将介绍复合类。
-  <a href="#Advanced_Use_of_Properties" title="">第六节</a>将介绍为属性建模的高级特性。
+  <a href="#Advanced_Use_of_Properties" title="">第六节</a>将介绍使用属性建模的高级特性。
   <a href="#Advanced_Use_of_Datatypes" title="">第七节</a>将着重介绍与数据类型相关联的更高级建模方法。
   <a href="#Document_Information_and_Annotations" title="">第八节</a>将总结主要用于管理本体的非逻辑特性。
 </p>
 <p>
-  在<a href="#OWL_2_DL_and_OWL_2_Full" title="">第九节</a>中我们将介绍 OWL 2 DL 和 OWL 2 Full ，两个不同语法之间的区别，
-  而在<a href="#OWL_2_Profiles" title="">第十节</a>我们将介绍 OWL 2 中三种易于处理的子语言，称为语言预设。
-  在<a href="#OWL_Tools" title="">第十一节</a>中我们将介绍 OWL 2 可以使用的工具。
+  在<a href="#OWL_2_DL_and_OWL_2_Full" title="">第九节</a>中我们将介绍 OWL 2 DL 和 OWL 2 Full ，两个不同语义角度之间的区别，
+  而在<a href="#OWL_2_Profiles" title="">第十节</a>我们将介绍 OWL 2 中三种比较容易处理的子语言，称为语言预设。
+  在<a href="#OWL_Tools" title="">第十一节</a>中我们将介绍 OWL 2 可用的工具。
   在<a href="#What_To_Read_Next" title="">第十二节</a>中我们将给出在阅读完本文档之后推荐继续阅读的材料。
 </p>
 <p>
   最后，<a href="#Appendix:_The_Complete_Sample_Ontology" title="">第十三节</a>中将给出本文档中使用的示例本体的完整版。
 </p>
 <p>
-  如需获得一份易读的 OWL 2 特性列表，请阅读 OWL 2 速查表[<cite><a href="#ref-owl-2-quick-reference" title="">OWL 2 速查表</a></cite>]。
+  如需获得一份完整的 OWL 2 特性列表，请阅读 OWL 2 速查表[<cite><a href="#ref-owl-2-quick-reference" title="">OWL 2 速查表</a></cite>]。
   该速查表提供格式和示例对应的文档部分的链接。
 </p>
 <p>
-  对于熟悉 OWL 1 的读者，<cite><a href="#ref-owl-2-new-features" title="">OWL 2 新特性和基本原理</a></cite>提供了易于理解的更改概览。
+  对于熟悉 OWL 1 的读者，<cite><a href="#ref-owl-2-new-features" title="">OWL 2 新特性和目标</a></cite>提供了易于理解的更改概览。
 </p>
 <a id="OWL_Syntaxes" name="OWL_Syntaxes"></a><h3> <span class="mw-headline">1.2 OWL 格式</span></h3>
 <p>
-  OWL 是一门用于语义Web的一门语言，所以 OWL 中的名称为国际化资源标识符（IRI）[<cite><a href="#ref-rfc-3987" title="">RFC 3987</a></cite>]。
+  OWL 是一门用于语义 Web 的语言，所以 OWL 中的名称均为国际化资源标识符（IRI）[<cite><a href="#ref-rfc-3987" title="">RFC 3987</a></cite>]。
   鉴于 IRI 很长，我们将会经常使用缩写来在 OWL 中记录它们。
   如何理解这些缩写与语法格式紧密相关，但在不知晓其细节的情况下本文档中使用的示例也能被理解。
-  在 <a href="#Ontology_Management" title="">8.2节</a>中将给出命名空间注释以及其相关工作机制。
+  在 <a href="#Ontology_Management" title="">8.2节</a>中将给出命名空间注释及其机制。
 </p>
 <p>
   OWL 可以使用许多不同的语法以满足不同需求。函数式语法[<cite><a href="#ref-owl-2-specification" title="">OWL 2 标准规范</a></cite>]
-  意在方便建立标准规范，并为API和处理器等 OWL 2 工具的实现提供基础。
-  OWL 的RDF/XML语法为带有OWL结构转译的RDF/XML[<cite><a href="#ref-owl-2-rdf-mapping" title="">OWL 2 RDF 映射</a></cite>]。
+  意在使建立标准更为便捷，并为API和推理器等 OWL 2 工具的实现提供基础。
+  OWL 的 RDF/XML 语法本质上仍是 RDF/XML，但带有 OWL 结构转译：[<cite><a href="#ref-owl-2-rdf-mapping" title="">OWL 2 RDF 映射</a></cite>]。
   这是唯一一个所有 OWL 2 工具都必须支持的语法。
-  曼彻斯特语法[<cite><a href="#ref-owl-2-manchester-syntax" title="">OWL 2 曼彻斯特语法</a></cite>]是为了方便非逻辑学者阅读而设计的语法。
-  OWL XML语法是由XML格式[<cite><a href="#ref-owl-2-xml-serialization" title="">OWL 2 XML</a></cite>]定义的XML语法。
-  当前存在提供 OWL 语法转换的工具。在众多语法形式中，OWL语言结构也能由 IRI 表示，同时可能需要适当注释来使用其缩写形式。
+  曼彻斯特语法[<cite><a href="#ref-owl-2-manchester-syntax" title="">OWL 2 曼彻斯特语法</a></cite>]是为方便非逻辑学者阅读而设计的语法。
+  OWL XML 语法是由 XML 格式[<cite><a href="#ref-owl-2-xml-serialization" title="">OWL 2 XML</a></cite>]定义的 XML 语法。
+  当前存在提供 OWL 语法转换的工具。在众多语法形式中，OWL 语言结构也能由 IRI 表示，同时可能需要适当注释来使用其缩写形式。
   同样，<a href="#Ontology_Management" title="">8.2节</a>将提供必要的细节。
 </p>
 <p>
-  附录中的示例和示例本体可以用四种不同的语法中的任意一种来表现，下面将提供 RDF/XML [<cite><a href="#ref-rdf-syntax" title="">RDF 语法</a></cite>]
+  附录中的示例和示例本体均可以用四种不同的语法来表现，下面提供 RDF/XML [<cite><a href="#ref-rdf-syntax" title="">RDF 语法</a></cite>]
   和 Turtle [<cite><a href="#ref-turtle" title="">Turtle</a></cite>] 序列化 作为基于RDF语法的示例。
   下方的按钮可以用于控制这些语法示例在整个文档中的可见性。
 </p>
@@ -370,51 +371,51 @@ function set_display_by_id(id, newValue) {
 <p>
   OWL 2 是一门用于描述<i>本体</i>的语言。
   <i>本体</i>这一词不论是在计算机领域还是其他领域都有着复杂的历史，但在这里我们
-  让它代表一种计算机可处理的对象，比如一个程序、一个XML文档，或者是一个网页。
-  他们通常都以文档的形式展现。一个本体是一系列关于世界上某个事物的精准的描述性语句，
+  认为它代表一种计算机可处理的对象，比如一个程序、一个 XML 文档，或者是一个网页。
+  他们通常都以文档的形式展现。一个本体是一系列精确描述世界上某个事物的语句，
   这些语句通常被称为本体的<i>关联域（domain of interest）</i>或<i>主题（subject matter）</i>。
-  这些准确的描述能满足众多需求，其中最重要的是它们能够避免人人交流中存在的偏差，
+  这些准确的描述能满足许多需求，其中最重要的是它们能够尽量消除人与人交流中存在的偏差，
   并保证软件的行为是统一的、可预测的，也让它们能与其他软件兼容。
 </p>
 <p>
-  为了能准确描述一个关联域，创造一系列关键术语 —— 通常被成为词汇表（Vocabulary）——
+  为了能准确描述一个关联域，预先创造一系列关键术语 —— 通常被成为词汇表（Vocabulary）——
   并固定它们的意义将有极大帮助。
   在使用一些简洁的自然语言之外，也可以通过描述某一术语与其他术语之间的联系来描述其含义。
-  由<i>术语（terminology）</i>提供的词汇表与其相关信息是一个典型 OWL 2 文档的重要组成部分。
+  由<i>术语（terminology）</i>组成的词汇表与其相关信息是一个典型 OWL 2 文档的重要组成部分。
   除了术语上的信息，一个本体也可能包含断言信息（assertional knowledge）。
   断言处理相关领域的具体信息而非一般概念。
 </p>
 <p>
-  OWL 2 不是一门编程语言：OWL 2 是<i>解释性的</i>,
-  也就是说，它被用于以一种合乎逻辑的方式描述某个事物的状态。
+  OWL 2 不是一门编程语言：OWL 2 是<i>声明性的</i>。
+  也就是说，它被用于从逻辑的角度描述某个事物的状态。
   恰当的工具（通常被称为推理器）可以用于推断某一本体背后包含的更多信息。
-  如何在算法上实现推断并不在 OWL 文档的讨论范围内，而取决于具体的实现方式。
-  尽管如此，这些推断的正确结果仍由正式语义预先决定（有两种版本的语义：
+  如何在算法上实现推断并不在 OWL 文档的讨论范围内，而取决于具体的实现。
+  尽管如此，这些推断的正确结果仍由正式语义决定（有两种版本的语义：
   <i>Direct Semantics</i> [<cite><a href="#ref-owl-2-direct-semantics" title="">OWL 2 Direct Semantics</a></cite>]
   和<i>RDF-Based Semantics</i> [<cite><a href="#ref-owl-2-rdf-semantics" title="">OWL 2 RDF-Based Semantics</a></cite>]）。 
   只有遵循这些语义的实现才会被认为是“OWL 2 兼容”的（详见[<cite><a href="#ref-owl-2-conformance" title="">OWL 2 Conformance</a></cite>]）。
-  由于其解释性的本质，构建一个 OWL 2 文档与编程存在概念上的不同。
-  但是，由于二者都涉及构建标准化的复杂文档，软件工程方面的某些概念也可以应用与
+  由于其解释性的本质，构建一个 OWL 2 文档与编程存在根本上的不同。
+  但是，由于二者都涉及构建标准化的复杂文档，软件工程方面的某些概念也可以应用于
   本体设计，如方法论、协作性、模块化、固定模式等。
 </p>
 <p>
   OWL 2 不对语法一致性做出要求。不像 XML ，OWL 2 没有提出与文档语法结构相关的具体要求。
-  例如，没有办法使某些信息（如某人的社保号）成为格式的一部分，使其必须存在。
+  例如，无法使某些信息（如某人的社保号）成为格式的一部分，使其必须存在。
   应牢记这一点，因为 OWL 中的部分特性可能会因此被用户误解。
 </p>
 <p>
-  OWL 2 不是一个数据库框架。必须承认的是，OWL 2 文档与数据库一样能够存储信息， 
-  断言信息和数据库信息之间、术语信息和数据库结构之间也存在相似性。
-  但是，这些类比常常忽略了这些概念的关键差异（技术上说：这些概念所使用的语法）。
+  OWL 2 不是一个数据库框架。尽管 OWL 2 文档与数据库一样能够存储信息， 
+  断言信息和数据库信息之间、术语信息和数据库结构之间也存在相似性，
+  但这样的类比常常忽略了这些概念的关键差异（技术上说：这些概念所使用的语义）。
   例如，如果某些事实不存在于数据库中，那它通常被认为是假的，遵从封闭世界假定(closed-world assumption)；
   而在 OWL 2 文档中，该事实可能仅仅是丢失了（而非是假的），遵从开放世界假定(open-world assumption)。
-  此外，数据库结构中通常带有上述的限制性语法。
+  此外，数据库结构中通常带有上述的限制性语义。
   尽管如此，技术上说，数据库仍在许多面向本体的系统中作为可靠的支柱。
 </p>
 <a id="Modeling_Knowledge:_Basic_Notions" name="Modeling_Knowledge:_Basic_Notions"></a><h2> <span class="mw-headline">3  建模知识：基本概念</span></h2>
 <p>
-  OWL 2 是一门用于表现知识的语言，用于生产、交换和推理某一关联域的知识。
-  有些基本概念必须被先行介绍以便理解知识在 OWL 2 中的表现形式。
+  OWL 2 是一门用于表现知识的语言，用于生产、交换和推理某一兴趣域的知识。
+  为了理解知识在 OWL 2 中的表现形式，有些基本概念必须被提前介绍。
   这些基本概念有：
 </p>
 <ul><li> <b>定理（Axioms）：</b> OWL 本体所表达的基本陈述内容
@@ -429,46 +430,46 @@ function set_display_by_id(id, newValue) {
   因为在知识呈现领域中后者通常拥有完全不同的意义。
 </p>
 <p>
-  为了能显式地表达知识，将知识视为由许多被称为<i>陈述</i>或<i>命题</i>的基本元素组成的整体对此过程有积极影响。
-  “现在在下雨”或者“所有人都会死”这样的陈述就是命题的典型例子。
+  为了能显式地表达知识，我们可以将知识视为由许多被称为<i>陈述</i>或<i>命题</i>的基本元素组成的整体。
+  “现在在下雨”或者“所有人都会死”这样的陈述就是命题的典例。
   没错，每个 OWL&nbsp;2 本体本质上都是这样“知识片段”的集合。
-  在本体中做出的陈述在 OWL&nbsp;2 本体中被称为<i>公理</i>，并且本体认为构成自身的公理均为真。
-  一般来说，根据事物的具体情况，OWL 陈述可能为真或假。
+  在 OWL&nbsp;2 本体中做出的陈述被称为<i>公理</i>，并且本体认为构成自身的公理均为真。
+  一般来说，根据事物的具体情况，OWL 陈述可能为真或假，
   这将它们从下面描述的<i>实体</i>和<i>表达式</i>区分开来。
 </p>
 <p>
   当人思考的时候，他们从自己的知识中得出结果。
-  OWL 的一个重要特性就是它利用自身知识的表现形式来模仿人类智能的这一方面。
-  但是，通常情况下，一个陈述是其他多个陈述的结果，是什么意思？
-  本质上，这意味着无论其他陈述如何，该陈述总为真。
-  以 OWL 的角度来看：如果在某一事物的某一状态下都有来自一组陈述<i>A</i>
-  的所有陈述和陈述<i>a</i>为真，那我们说陈述<i>a</i>包含于<i>A</i>。
-  此外，一组陈述可能是<i>一致的</i>（也就是说，某事物存在一种状态，使得这一组陈述中的所有陈述均为真），
-  也有可能是<i>不一致的</i>（某事物不存在一种状态，使得这一组陈述中的所有陈述均为真）。
-  实际上， OWL 的正式语义中定义了用来表达在某些事物的某些状态下一组特定的 OWL 陈述为真的语句。
+  OWL 的一个重要特性就是它能利用自身知识来模仿人类智能的这一方面。
+  但是，通常情况下，一个陈述是其他多个陈述的结果，这是什么意思？
+  本质上，这意味着当其他陈述为真时，该陈述总为真。
+  以 OWL 的角度来看：如果一组陈述<i>A</i>能够推出陈述<i>a</i>，且在某种情况下<i>A</i>
+  中的所有陈述为真，则该情况下陈述<i>a</i>必定为真。
+  此外，一组陈述可能是<i>一致的</i>（也就是说，存在一种情况，使得这一组陈述中的所有陈述均为真），
+  也有可能是<i>不一致的</i>（使这一组陈述中的所有陈述均为真的情况不存在）。
+  OWL 的正式语义表明，在任何情况下，总有一组特定的 OWL 陈述为真。
 </p><p>
-  有 OWL 工具——推理器，能够自动计算结果。
-  本体的公理之间的交互可能很微妙且难以被人们理解。
+  OWL 工具——推理器，能够自动计算结果。
+  本体的公理之间的相互作用可能很微妙且难以理解。
   这既是 OWL&nbsp;2 的优势，也是其劣势。
-  之所以是其优势是因为 OWL&nbsp;2 工具能够发现人们可能难以发现的信息。
-  这允许知识工程师能够更直接地建模，也能让系统能够在建模中提供有帮助的反馈和详细的分析信息。
-  之所以又是其劣势是因为人们很难立刻预见不同组合中各种构造能产生怎样的效果。
-  工具提供的支持改善了这一情况，但成功的知识工程仍然需要一些训练和经验。
+  优势在于 OWL&nbsp;2 工具能够发现人们可能难以发现的信息。
+  这允许知识工程师能够更直接地建模，也能让系统能够在建模过程中提供有用的反馈和详细的分析信息。
+  劣势则是因为，人们很难立刻预见不同组合中各种结构能产生怎样的效果。
+  工具改善了这一情况，但成功的知识工程仍然需要一些训练和经验。
 </p>
 <p>
-  在进一步观察 OWL 中的陈述，我们发现他们很少是“整体”的，而经常有一些可以被显式呈现的内部结构。
-  它们通常指向世界中的某些对象，并且用，例如，对它们分类（比如“Mary是女性”），
-  或者描述它们之间的联系（比如“John和Mary结婚了”）来表示自身。
-  所有陈述中的不可再分的部分，如对象（John，Mary）、类别（女性）或者关系（结婚），被称为<i>实体</i>。
+  进一步观察 OWL 中的陈述，我们发现他们很少是“不可分割”的，而是经常有可以被显式呈现的内部结构。
+  它们通常指向世界中的某些对象，并且会对它们分类（比如“Mary是女性”），
+  或者描述它们之间的联系（比如“John和Mary结婚了”）。
+  所有陈述中的不可再分的部分，不论是对象（John，Mary）、类别（女性）或者关系（结婚），被称为<i>实体</i>。
   在 OWL&nbsp;2 中，我们将对象表示为<i>个体（individuals）</i>，
   类别表示为<i>类（classes）</i>，关系表示为<i>属性（properties）</i>。
   在 OWL 2 中属性被进一步细分。<i>对象属性（object properties）</i>使对象与对象之间产生联系（比如某人及其伴侣），
   而<i>数据属性（datatype properties）</i>用于赋予对象数据值（如某人的年龄）。
-  <i>注解属性（annotation properties）</i>用于储存本体本身的（一些）信息
-  （比如某个公理的作者和其创建日期）而非本体的关联域。
+  <i>注释属性（annotation properties）</i>用于储存本体本身的（一些）信息
+  （比如某个公理的作者和其创建日期）而非本体的兴趣域。
 </p>
 <p>
-  作为 OWL 的核心特性，实体的名称可以使用<i>构造器</i>来组合成<i>表达式</i>。
+  OWL 的核心特性之一是实体的名称可以使用<i>构造器</i>来组合成<i>表达式</i>。
   最简单的例子就是，原子类“女性”和“教授”可以被组合起来描述”女教授“这一类。
   后者可以用一个 OWL 类表达式来描述，自然也可以用于陈述或其他表达式中。
   这样，表达式可以被视为由自身结构定义的新实体。
@@ -479,12 +480,12 @@ function set_display_by_id(id, newValue) {
 <a id="Classes.2C_Properties.2C_and_Individuals_.E2.80.93_And_Basic_Modeling_With_Them" name="Classes.2C_Properties.2C_and_Individuals_.E2.80.93_And_Basic_Modeling_With_Them"></a><h2> <span class="mw-headline">4 类, 属性, 个体 —— 还有使用他们来建模</span></h2>
 <p>
   在完成这些基本介绍后，我们现在来接触使用 OWL 2 来建模的细节。
-  在接下来的几节里，我们将介绍 OWL 2 提供的核心建模特性，提供示例以及给出一些如何使用它们的建议。
-  我们将从在几乎任何建模语言中都必需的基本特性开始，向更高级的结构进发。
+  在接下来的几节里，我们将介绍 OWL 2 提供的核心建模特性，提供示例并给出一些如何使用它们的建议。
+  我们将从在几乎任何建模语言中都存在的基本特性开始，向更高级的结构进发。
 </p>
 <p>
   下面我们将使用 OWL 来表示一个家庭。
-  请注意，我们并非想让这个例子代表 OWL 应该被应用的领域，也不认为这是一个使用 OWL 建模的范例，
+  请注意，我们并非想让这个例子代表 OWL 应该被应用的领域，也不认为这是一个良好的使用 OWL 建模的范例，
   且不认为这能正确表示一个事实上复杂多变且会因文化环境不同而存在各种差异的家庭。
   我们只是想让这个它成为一个能展示 OWL 多种特性的简单示例。
 </p>
@@ -513,9 +514,9 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p><br>
-  这个陈述提及了个体Mary，并声称这个个体是一个人。
-  更技术上说，<i>是一个人</i>意味着Mary属于（或者说，是其成员，或者更技术一点，是其实例）<i>人</i>这一个类。
-  通常来说，类通常用于对有共同性质的个体进行归类以便指代他们。所以，一个类本质上是一些个体的集合。
+  这个陈述提及了个体Mary，并声称这个个体是人。
+  更技术上说，<i>是人</i>意味着Mary属于（或者说，是其成员；或者更技术一点，是其实例）<i>人</i>这一个类。
+  通常来说，类将有共同性质的个体包含在一起以便指代他们。所以，类的本质是个体的集合。
   在建模领域，类通常用来表示人类思维概念中一些对象的集合，比如<i>人</i>和<i>女人</i>。
   因此，我们可以使用“Mary是‘女人’这个类的实例”这样的陈述来表示Mary是女人：
 </p>
@@ -540,17 +541,19 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  由此，我们可以很明显地看出，一个类的成员资格并不是排它的：鉴于对个体归类存在多种标准（比如性别、年龄、鞋子尺码等）
+  由此，我们可以很明显地看出，类的成员资格是非排它的：
+  对个体归类存在多种标准（比如性别、年龄、鞋子尺码等），
   一个个体也可以同时属于多个类。
 </p>
 <a id="Class_Hierarchies" name="Class_Hierarchies"></a><h3> <span class="mw-headline">4.2 类的层次结构</span></h3>
 <p>
   在前面的一节里，我们谈及了两个类：包括所有人的类和包括所有女人的类。
-  对于人类读者来说，很自然能看出这两个类存在特殊联系：“人”的概念比“女人”更加宽泛，也就是说，
-  当我们知道一个个体是女人的时候，那她一定是一个人。然而，这种关系不能从“人”和“女人”的符号本身中
-  被推断出来，而是从一个人关于这个世界的背景知识和这两个符号的用法中推断出来。
+  对于人类读者来说，很自然能看出这两个类存在特殊联系：“人”的概念比“女人”更加广泛。
+  也就是说，当我们知道一个个体是女人的时候，那她一定是人。
+  然而，这种关系不能从“人”和“女人”的符号本身中被推断出来，
+  而是从一个人关于这个世界的背景知识和这两个符号的用法中推断出来。
   所以，为了能让计算机系统能够得出预期的结论，我们必须向其明确指出这样的联系。
- <span id="a_SubClassOf"> </span>在 OWL 2 中，可以通过所谓的“子类公理”来实现：
+ <span id="a_SubClassOf"> </span>在 OWL 2 中，可以通过声明“子类公理”来实现：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SubClassOf(&nbsp;:Woman&nbsp;:Person )
@@ -575,13 +578,13 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  在本体中出现的这条公理让推理器能够推测，对于每一个是“女人”这个类的实例的个体，
-  其同样是“人”这个类的实例。经验告诉我们，当“每个A都可以是B”为真时，A和B的子类关系就可以被建立。
+  在本体中出现的这条公理让推理器能够推测，对于每一个是“女人”这个类的实例，
+  其同样是“人”这个类的实例。经验告诉我们，当“每个A都可以是B”为真时，A便可以成为B的子类。
 </p>
 <p>
-  在本体建模中使用子类陈述是很常见的，它不仅偶尔用于声明类之间这样的关系，
-  还能通过确立一个关联域内所有类一般化的联系来描述一整个<i>类的层次结构</i>。
-  假设我们想要声称所有的母亲都是女人：
+  在本体建模中使用子类陈述是很常见的，它不仅用于声明类之间的包含关系，
+  还能通过确定一个兴趣域内所有类一般化的联系来描述一整个<i>类的层次结构</i>。
+  假设我们想要声明所有的母亲都是女人：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SubClassOf(&nbsp;:Mother&nbsp;:Woman )
@@ -609,7 +612,8 @@ function set_display_by_id(id, newValue) {
   这样推理器不仅能为所有是“母亲”类的实例推断出她是”女人“类的实例，而且也能推断出，
   她也是“人”这一类的实例——正好是我们想要的结果。
   技术上说，这意味着类之间的子类关系是<i>可传递的</i>(transitive)。
-  除此之外，这样的关系还是<i>反身的</i>（reflexive），也就是说，每个类都是自己的子类——这很符合直觉，比如每个人都是人。
+  除此之外，这样的关系还是<i>反身的</i>（reflexive），
+  也就是说，每个类都是自己的子类——这很符合直觉，比如每个人都是人。
 </p><p><span id="a_EquivalentClasses"> </span>
 </p><p>
   在我们自己的词汇中，不同的“类”可能指向同一个集合。由此，OWL 提供了使得两个类在语义上等价的机制。
@@ -645,7 +649,7 @@ function set_display_by_id(id, newValue) {
 <a id="Class_Disjointness" name="Class_Disjointness"></a><h3> <span class="mw-headline">4.3 类的不交性</span></h3>
 <p><span id="a_DisjointClasses"> </span>
   在4.1节中，我们说一个个体可以是多个类的实例。然而，在某些情况下，类的成员资格是排他的。
-  比如，“男人”和“女人”类，我们知道没有任何个体能同时是这两个类的实例（为了方便起见，我们不讨论正好在生理边界上的那些例子）。
+  对于“男人”和“女人”类，我们知道，没有任何个体能同时是这两个类的实例（为了方便起见，我们不讨论正好在生理边界上的那些例子）。
   这种类之间的“不兼容关系”被称为<i>（类的）不交性</i>（disjointness）。
   与“女人”是“人”的子类这一关系一样，类之间的不交来自于我们的背景知识，
   因而同样必须显示指出这样的关系才能让推理器利用这种关系。
@@ -677,17 +681,17 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  在实践中，不交声明经常被遗漏或忽略。一种存在争议的理由是，从直觉上说，除非额外声明，一个类与其他类都应该是不交的。
+  在实践中，不交声明经常被遗漏或忽略。一种理由是，从直觉上说，除非额外声明，一个类与其他类都应该是不交的。
   这样的结果是，许多有价值的结论可能会丢失。在我们给出的示例中，不交公理是推断Mary不是男人所必须的。
   更进一步，如果给出了这样的不交公理，推理器便可以推测出“母亲”和“男人”的不交性。
 </p>
 <a id="Object_Properties" name="Object_Properties"></a><h3> <span class="mw-headline">4.4 对象属性</span></h3>
 <p>
-  在接下来的几节里，我们将着眼与描述单个个体、它们的类的成员资格，和类怎样能通过它们的实例建立联系。
-  在更多情况下，一个本体也描述一个个体与其他个体之间的关系。
+  在接下来的几节里，我们将着眼与描述单个个体、它们的类的成员资格，和类怎样通过它们的实例来建立联系。
+  在更多情况下，一个本体也包含某个个体与其他个体之间的关系。
   下面的关系是描述一个家庭的关键。
 <span id="a_ObjectPropertyAssertion"> </span>
-我们首先声明Mary是John的妻子。
+  我们首先声明Mary是John的妻子。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ObjectPropertyAssertion(&nbsp;:hasWife&nbsp;:John&nbsp;:Mary )
@@ -716,7 +720,7 @@ function set_display_by_id(id, newValue) {
   像这样，描述个体之间联系的实体——像上述例子中的hasWife（"有妻子是..."），被称为<i>属性</i>。
 </p>
 <p>
-  需要注意的是，个体在签名中的顺序是很重要的。“Mary是John的妻子”可能为真，但“John是Mary的妻子”显然不是。
+  需要注意的是，个体在签名中的顺序是很重要的。“Mary是John的妻子”可能为真，但“John是Mary的妻子”则显然不是。
   的确，这是建模错误的一个常见来源，但我们可以通过使用仅有一种符合逻辑的阅读方式的属性名来避免。
   在使用名词的情况下（比如妻子"wife"），这样明确的属性名可能带有"of"（“是...的”）或者"has"（“有...”），
   如"wifeOf"（“是...的妻子”）或者"hasWife"(“有妻子是...”)。
@@ -754,7 +758,7 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  否定属性断言提供了声明某些事物为假的专用方式。
+  否定属性断言是了声明某些事物为假的专用方式。
   因为 OWL 遵从开放世界假设：除非特别声明，任何事物都可能为真，
   所以这样的信息就显得尤为重要。
 </p>
@@ -840,9 +844,9 @@ function set_display_by_id(id, newValue) {
 <a id="Equality_and_Inequality_of_Individuals" name="Equality_and_Inequality_of_Individuals"></a><h3> <span class="mw-headline">4.7 个体间的相等和不等</span></h3>
 <p>
   需要引起注意的是，从我们目前给出的信息来看，我们可以推测John和Mary不是同一个个体，因为他们分属于“男人”和“女人”这两个不交类的实例。
-  然而，无关我们再添加一位家庭成员的信息，比如Bill,并且声明他是男人，那目前为止，还不存在John和Bill不是同一个个体的声明。
+  然而，如果我们再添加一位家庭成员的信息，比如Bill,并且声明他是男人，那目前为止，还不存在John和Bill不是同一个个体的声明。
   OWL 并不接受因为名字不同就认为是不同个体的假设。
-  （这种“唯一名称假设”的缺失特别适用于语义Web应用，在其中不同名字可能被不同组织用来指代同一个个体。）
+  （这种“唯一名称假设”的缺失特别适用于语义Web应用，其中的不同名字可能被不同组织用来指代同一个个体。）
   <span id="a_DifferentIndividuals"> </span>
   所以，如果想要排除掉John和Bill是同一个人的可能性，我们必须像下面这样显示指出：
 </p>
@@ -869,7 +873,7 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p><span id="a_SameIndividual"> </span>
-  同样，我们也可以声明两个名字指向（推测出）同一个个体。
+  同样，我们也可以声明两个名字指向（可以推测出是）同一个个体。
   比如，我们可以声明James和Jim是同一个个体：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
@@ -963,8 +967,8 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p><span id="a_DataPropertyDomain"> </span><span id="a_DataPropertyRange"> </span>
-域和范围限制也也适用于数据属性。不过，在这种情况下，范围将是一个数据类型而不是类。
-下面的示例声明属性hasAge只能将非负数的年龄与人联系起来。
+  域和范围限制也也适用于数据属性。不过，在这种情况下，范围将是一个数据类型而不是类。
+  下面的示例声明属性hasAge只能将非负数的年龄与人联系起来。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> DataPropertyDomain(&nbsp;:hasAge&nbsp;:Person ) 
@@ -997,9 +1001,9 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  到这里我们想要指出一个常见错误，它在适用属性的域和范围限制的时候很容易出现。
+  到这里我们需要指出一个常见错误，它在使用属性的域和范围限制的时候很容易出现。
   在我们刚刚给出的示例中，我们声明hasAge属性只适用于将人与非负数整数联系起来。
-  假设我们也给出了Felix是“猫”的实例的信息且使用hasAge将整数“9”与它联系起来，
+  假设我们也声明了Felix是“猫”的实例且使用hasAge将整数“9”与它联系起来，
   那从所有的信息中可以推出Felix也是“人”的实例，这可能并不是我们想要的。
   这将导致一个常见的建模错误：注意，一个域（或者范围）限制并不是知识上的约束，而为了让
   推理器能够进一步得出更多信息。如果我们声明——像例子中的那样——年龄只适用于“人”，那
@@ -1009,9 +1013,6 @@ function set_display_by_id(id, newValue) {
 <p>
   在前面的章节里，我们将类视为某些带有名字的“不透明的”东西。我们使用它们来
   表示个体的特征，并用子类或者不交声明来将它们与其他类联系起来。
-  In the previous sections we have dealt with classes as something 
-“opaque” carrying a name. We used them to characterize  individuals, and
- related them to other classes via subclass or disjointness statements.
 </p><p>
   我们现在将展示如何使用带有名字的类、属性，和个体作为定义新类的基础。
 </p>
@@ -1024,7 +1025,7 @@ function set_display_by_id(id, newValue) {
   这些构造器将原子类——比如带名字的类——组合成复合类。
 </p><p><span id="a_ObjectIntersectionOf"> </span>
   两个类的<i>交集</i>包含且仅包含是同时是这两个类的实例的个体。
-  下面的示例声明“母亲”类包含且仅包含同时是“女人”和“父母”的实例的对象：
+  下面的示例声明“母亲”类包含同时是“女人”和“父母”的实例的对象：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1203,7 +1204,7 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  通常来说，有名字的类使用的地方，复合类都可以使用，那类相关的断言也可以。
+  通常来说，在使用有名字的类地方都可以使用复合类，类相关的断言也可以。
   下面的示例展示了这一点，其断言Jack是“人”的实例而不是“父母”的实例：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
@@ -1256,11 +1257,12 @@ function set_display_by_id(id, newValue) {
 </div>
 <a id="Property_Restrictions" name="Property_Restrictions"></a><h3> <span class="mw-headline">5.2 属性限制</span></h3>
 <p>
-  属性限制为复合类提供了另一种基于逻辑的构造器。正如名字显示的，属性限制使用与属性有关的构造器。
+  属性限制构造器为复合类提供了另一种基于逻辑的构造器。
+  正如名字显示的，对属性做出限制需要使用与属性有关的构造器。
 </p><p><span id="a_ObjectSomeValuesFrom"> </span>
   一种属性限制被称为<i>存在量化</i>（existential quantification）。
-  它将那些有通过特定属性与其他个体产生联系的个体归为一类，且与其产生联系的个体中存在属于特定的类的个体。
-  我们最好通过例子来解释它如何运作，就像下面的例子，它定义“父母”类的实例是那些有通过hasChild属性与其他个体联系起来的个体：
+  它将那些通过特定属性与其他个体产生联系的个体归为一类，且与其产生联系的个体中存在属于特定的类的个体。
+  我们最好通过例子来解释它的效果，就像下面的例子，它定义“父母”类的实例是那些有通过hasChild属性与其他个体联系起来的个体：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1305,9 +1307,9 @@ function set_display_by_id(id, newValue) {
   就能推测出他至少有一个孩子，即使我们还不知道他（们）的名字。
   在自然语言中使用到存在量词的提示是“几个”“之一”。
 </p><p><span id="a_ObjectAllValuesFrom"> </span>
-  另一种属性限制被称为<i>全称量词</i>。
-  它将那些有通过特定属性与其他个体产生联系的个体归为一类，且与其产生联系的个体都必须属于特定的类。
-  我们可以使用下面的语句表示当且仅当一个人的所有孩子都是快乐的人时，他才是一个快乐的人。
+  另一种属性限制被称为<i>全称量化</i>。
+  它将那些有通过特定属性与其他个体产生联系的个体归为一类，且与其产生联系的个体都属于特定的类。
+  我们可以使用下面的语句表示仅当一个人的所有孩子都是快乐的人时，他才是一个快乐的人。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1355,13 +1357,11 @@ function set_display_by_id(id, newValue) {
   经验告诉我们，当将使用自然语言做出的声明翻译成逻辑公理时，存在量化更常出现。
   自然语言中的全称量化通常使用“只有”“仅”和“除...外都不”。
 </p><p>
-  
-  There is one particular misconception concerning the universal role restriction. 
-  As an example, consider the above happiness axiom. 
-The intuitive reading suggests that in order to be happy, a person must have at least one happy child. 
-Yet, this is not the case: any individual that is not a “starting point” of the property hasChild is a class member of any class defined by universal quantification over hasChild. 
-Hence, by our above statement, every childless person would be qualified as happy. 
-In order to formalize the aforementioned intended reading, the statement would have to read as follows:
+  对于全称量化，常常存在着一个误解。
+  以上面的幸福公理为例，直觉告诉我们，为了让一个“人”感到幸福，他至少需要一个孩子，而且必须是快乐的孩子。
+  但有人可能认为“任何没有 hasChild 属性的个体都满足‘任意hasChild’类的成员（因为这一属性并不存在）”，
+  并推理出没有孩子的人也是幸福的，这是错误的。
+  为了表达前面提到的符合直觉的推断，幸福公理需要这样理解：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1424,11 +1424,11 @@ In order to formalize the aforementioned intended reading, the statement would h
  &lt;/EquivalentClasses&gt;
 </pre>
 </div>
-<p>This example also illustrates how property restrictions can be nested with complex classes.
+<p>
+  该示例也展示了属性限制声明可以与复合类嵌套使用。
 </p><p><span id="a_ObjectHasValue"> </span>
-Property restrictions can also be used to describe classes of 
-individuals that are related to one particular individual. For instance 
-we could define the class of John's children:
+  属性限制声明同样可以描述与某个特定个体有联系的一类个体。
+  比如，我们可以这样定义 “John 的孩子”类：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses( 
@@ -1468,9 +1468,8 @@ we could define the class of John's children:
 </pre>
 </div>
 <p><span id="a_ObjectHasSelf"> </span>
-As a special case of individuals being interlinked by properties, an 
-individual might be linked to itself. The following example shows how to
- represent the idea that all narcissists love themselves. 
+  作为个体与个体通过属性连接的特例，一个个体可能通过属性与其本身建立联系。
+  下面的例子声明了所有自恋者都爱他们自己。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1510,12 +1509,13 @@ individual might be linked to itself. The following example shows how to
  &lt;/EquivalentClasses&gt;
 </pre>
 </div>
-<a id="Property_Cardinality_Restrictions" name="Property_Cardinality_Restrictions"></a><h3> <span class="mw-headline">5.3 Property Cardinality Restrictions</span></h3>
-<p>Using universal quantification, we can say something about all of 
-somebody's children, whereas existential quantification allows us to  
-refer to (at least) one of them. However, we might want to specify the 
-number of individuals involved in the restriction. Indeed, we can 
-construct classes depending on the number of children. <span id="a_ObjectMaxCardinalityQualified"> </span>The following example states that John has at most four children who are themselves parents:
+<a id="Property_Cardinality_Restrictions" name="Property_Cardinality_Restrictions"></a><h3> <span class="mw-headline">5.3 属性的数值限制</span></h3>
+<p>
+  使用全称量化，我们可以描述某人所有的孩子，而存在量化让我们可以描述其中的某一个或几个。
+  然而，我们可能想在限制声明中明确受影响的个体数量。
+  我们的确可以根据孩子的数量来构造一系列类。
+  <span id="a_ObjectMaxCardinalityQualified"> </span>
+  下面的例子声明 John 有最多四个是父母的孩子：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ClassAssertion(
@@ -1558,11 +1558,10 @@ construct classes depending on the number of children. <span id="a_ObjectMaxCard
  &lt;/ClassAssertion&gt;
 </pre>
 </div>
-<p>Note that this statement allows John to have arbitrarily many further children who are not parents. 
+<p>
+  注意：这样的声明允许 John 拥有任意个不是父母的孩子。
 </p><p><span id="a_ObjectMinCardinalityQualified"> </span>
-Likewise, it is also possible to declare a minimum number by saying that
- John is an instance of the class of individuals having at least two 
-children who are parents:
+  同理，也可以通过声明 John 属于一个有至少两个是父母的孩子的类来确定一个最小值：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ClassAssertion(
@@ -1606,7 +1605,7 @@ children who are parents:
 </pre>
 </div>
 <p><span id="a_ObjectExactCardinalityQualified"> </span>
-If we happen to know the exact number of John's children who are parents, this can be specified as follows:
+  如果我们恰好知道 John 有多少是父母的孩子，我们也可以这样声明：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ClassAssertion( 
@@ -1650,9 +1649,8 @@ If we happen to know the exact number of John's children who are parents, this c
 </pre>
 </div>
 <p><span id="a_ObjectExactCardinality"> </span>
-In a cardinality restriction, providing the class is optional; if we 
-just want to talk about the number of all of John's children we can 
-write the following:
+  在数值限制声明中，提供一个类不是必须的。
+  如果我们只想对 John 的孩子数量做出限制，我们可以这样写：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ClassAssertion(
@@ -1692,11 +1690,10 @@ write the following:
  &lt;/ClassAssertion&gt;
 </pre>
 </div>
-<a id="Enumeration_of_Individuals" name="Enumeration_of_Individuals"></a><h3> <span class="mw-headline">5.4 Enumeration of Individuals</span></h3>
+<a id="Enumeration_of_Individuals" name="Enumeration_of_Individuals"></a><h3> <span class="mw-headline">5.4 枚举个体来定义类</span></h3>
 <p><span id="a_ObjectOneOf"> </span>
-A very straightforward way to describe a class is just to enumerate all 
-its instances. OWL provides this possibility, e.g. we can create a class
- of birthday guests:
+  枚举一个类的所有实例是定义这个类的一个非常直接的方法。
+  我们可以为所有参加生日派对的客人创建一个类：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1738,23 +1735,21 @@ its instances. OWL provides this possibility, e.g. we can create a class
  &lt;/EquivalentClasses&gt;
 </pre>
 </div>
-<p>Note that this axiom provides more information than simply asserting 
-class membership of Bill, John, and Mary as described in Section 4.1. In
- addition to that, it also stipulates that Bill, John, and Mary are the <i>only</i> members of MyBirthdayGuests. Therefore, classes defined this way are sometimes referred to as <i>closed classes</i>
- or enumerated sets. If we now assert Jeff as an instance of 
-MyBirthdayGuests, the consequence is that Jeff must be equal to one of 
-the above three persons.
+<p>
+  注意，这一公理不仅确定了 Bill，John 和 Mary 的成员身份，像 4.1 节中介绍的那样，
+  还声明这三人是 MyBirthdayGuests 类仅有的成员。
+  因此，这样定义的类有时被称为<i>封闭的类</i>，或可枚举集合。
+  如果我们现在声明 Jeff 也是这个类的实例，这将表明 Jeff 和上面三个人中的某一人是同一人。
 </p>
-<a id="Advanced_Use_of_Properties" name="Advanced_Use_of_Properties"></a><h2> <span class="mw-headline">6 Advanced Use of Properties</span></h2>
-<p>Until now we focused on classes and properties that were merely used 
-as building blocks for class expressions. In the following, we will see 
-what other modeling capabilities with properties OWL 2 offers. 
+<a id="Advanced_Use_of_Properties" name="Advanced_Use_of_Properties"></a><h2> <span class="mw-headline">6 属性的进阶用法</span></h2>
+<p>
+  目前为止，类和属性仅在类表达式中作为基本元素使用。
+  接下来，我们将认识 OWL 2 中属性在建模方面的其他能力。
 </p>
 <a id="Property_Characteristics" name="Property_Characteristics"></a><h3> <span class="mw-headline">6.1 Property Characteristics</span></h3>
 <p><span id="a_InverseObjectProperties"> </span>
-Sometimes one property can be obtained by taking another property and 
-changing its direction, i.e. inverting it. For example, the property 
-hasParent can be defined as the inverse property of hasChild:
+  有时可以通过改变一个属性的方向来取得另一个属性，也就是翻转。
+  例如，属性 hasParent （有父母是...）可以定义为 hasChild （有孩子是...）的翻转属性。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> InverseObjectProperties(&nbsp;:hasParent&nbsp;:hasChild ) 
@@ -1778,13 +1773,12 @@ hasParent can be defined as the inverse property of hasChild:
  &lt;/InverseObjectProperties&gt;
 </pre>
 </div>
-<p>This would for example allow to deduce for arbitrary individuals A 
-and B, where A is linked to B by the hasChild property, that B and A are
- also interlinked by the hasParent property. <span id="a_ObjectInverseOf"> </span>However,
- we do not need to explicitly assign a name to the inverse of a property
- if we just want to use it, say, inside a class expression. Instead of 
-using the new hasParent property for the definition of the class Orphan,
- we can directly refer to it as the hasChild-inverse:
+<p>
+  这让我们可以推测，对于任意两个个体 A 和 B，当 A 使用 hasChild 属性与 B 建立联系时，
+  B 自动通过 hasParent 属性与 A 建立联系。
+  <span id="a_ObjectInverseOf"> </span>
+  不过，如果我们想要，比如在类表达式中，使用一个属性的翻转，我们可以直接使用它而不创建一个新的类。
+  在 Orphan （孤儿）类的定义中，除了使用刚刚定义的 hasParent 属性，我们也可以直接翻转 hasChild:
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> EquivalentClasses(
@@ -1833,10 +1827,9 @@ using the new hasParent property for the definition of the class Orphan,
 </pre>
 </div>
 <p><span id="a_SymmetricObjectProperty"> </span>
-In some cases, a property and its inverse coincide, or in other words, 
-the direction of a property doesn't matter. For instance the property 
-hasSpouse relates A with B exactly if it relates B with A. For obvious 
-reasons, a property with this characteristic is called <i>symmetric</i>, and it can be specified as follows
+  在某些情况下，一个属性和其翻转等价，或者说，这个属性的方向无关紧要。
+  比如，hasSpouse 将 A 与 B 连接等价于将 B 与 A 连接。
+  有着这样特征的属性被认为是<i>对称的</i>，可以这样表示：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SymmetricObjectProperty(&nbsp;:hasSpouse ) 
@@ -1858,10 +1851,8 @@ reasons, a property with this characteristic is called <i>symmetric</i>, and it 
 </pre>
 </div>
 <p><span id="a_AsymmetricObjectProperty"> </span>
-On the other hand, a property can also be <i>asymmetric</i> meaning that
- if it connects A with B it never connects B with A. Clearly (excluding 
-paradoxical scenarios resulting from time travels), this is the case for
- the property hasChild and is expressed like this: 
+  相反地，属性可以也可以是<i>不对称的</i>，也就是说，当 A 与 B 连接后，不可以用同一个属性将 B 和 A 连接。
+  很明显（排除时间旅行带来的悖论），属性 hasChild 是不对称的，可以这样表示：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> AsymmetricObjectProperty(&nbsp;:hasChild ) 
@@ -1882,15 +1873,13 @@ paradoxical scenarios resulting from time travels), this is the case for
  &lt;/AsymmetricObjectProperty&gt;
 </pre>
 </div>
-<p>Note that being asymmetric is a much stronger notion than being 
-non-symmetric. Likewise, being symmetric is a much stronger notion than 
-being non-asymmetric.
+<p>
+  注意，不对称性比非对称更加严格。同样的，对称性比非不对称更加严格。
 </p><p><span id="a_DisjointObjectProperties"> </span>
-Previously, we considered subproperties in analogy to subclasses. It 
-turns out that it also make sense to transfer the notion of class 
-disjointness to properties: two properties are disjoint if there are no 
-two individuals that are interlinked by both properties. Following 
-common law, we can thus state that parent-child marriages cannot occur:
+  先前我们将子属性比作子类。
+  然而我们也可以把类的不交性带入属性中：如果两个属性不能连接两个相同的个体，
+  则这两个属性是不交的。
+  根据常见的法律，我们可以这样声明父母和孩子不能结婚：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> DisjointObjectProperties(&nbsp;:hasParent&nbsp;:hasSpouse )  
@@ -1914,7 +1903,8 @@ common law, we can thus state that parent-child marriages cannot occur:
 </pre>
 </div>
 <p><span id="a_ReflexiveObjectProperty"> </span>
-Properties can also be <i>reflexive</i>: such a property relates everything to itself. For the following example, note that everybody has himself as a relative.
+  属性也可以是<i>反身的</i>：这样的属性会将自己与自己联系起来。
+  下面这个例子声明自己是自己的亲属：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> ReflexiveObjectProperty(&nbsp;:hasRelative )
@@ -1935,11 +1925,11 @@ Properties can also be <i>reflexive</i>: such a property relates everything to i
  &lt;/ReflexiveObjectProperty&gt;
 </pre>
 </div>
-<p>Note that this does not necessarily mean that every two individuals which are related by a reflexive property are identical. 
+<p>
+  注意，这并不意味着由有反身性的属性连接的两个个体是等价的。
 </p><p><span id="a_IrreflexiveObjectProperty"> </span>
-Properties can furthermore be <i>irreflexive</i>, meaning that no 
-individual can be related to itself by such a role. A typical example is
- the following which simply states that nobody can be his own parent.
+  属性也可以是<i>非反身的</i>，即个体不能使用这个属性来连接自己。
+  比如下面声明人都不是自己的父母：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> IrreflexiveObjectProperty(&nbsp;:parentOf )   
@@ -1960,10 +1950,11 @@ individual can be related to itself by such a role. A typical example is
  &lt;/IrreflexiveObjectProperty&gt;
 </pre>
 </div>
-<p>Next, consider the hasHusband property. As every person can have only
- one husband (which we take for granted for the sake of the example), 
-every individual can be linked by the hasHusband property to at most one
- other individual. <span id="a_FunctionalObjectProperty"> </span>This kind of properties are called <i>functional</i> and are described as follows:
+<p>
+  接下来，由于每个人最多只能由一位丈夫（为了举例我们认为这是必须的），
+  我们可以定义 hasHusband 属性使其最多连接一个个体。
+  <span id="a_FunctionalObjectProperty"> </span>
+  这种属性被称为<i>专一的</i>，可以这样描述：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> FunctionalObjectProperty(&nbsp;:hasHusband ) 
@@ -1984,12 +1975,12 @@ every individual can be linked by the hasHusband property to at most one
  &lt;/FunctionalObjectProperty&gt;
 </pre>
 </div>
-<p>Note that this statement does not require every individual to have a 
-husband, it just states that there can be no more than one. Moreover, if
- we additionally had a statement that Mary's husband is James and 
-another that Mary's husband is Jim, it could be inferred that Jim and 
-James must refer to the same individual.
-</p><p><span id="a_InverseFunctionalObjectProperty"> </span>It is also possible to indicate that the inverse of a given property is functional:
+<p>
+  注意，这样的声明并不要求每一个个体都有一位丈夫，这仅仅声明丈夫的数量不能超过一位。
+  因此，如果我们声明 Mary 的丈夫是 James 后声明 Mary 的丈夫是 Jim，
+  这将表明 Jim 和 James 是同一个体。
+</p><p><span id="a_InverseFunctionalObjectProperty"> </span>
+  我们也可以声明一个属性的翻转是专一的：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> InverseFunctionalObjectProperty(&nbsp;:hasHusband ) 
@@ -2010,19 +2001,17 @@ James must refer to the same individual.
  &lt;/InverseFunctionalObjectProperty&gt;
 </pre>
 </div>
-<p>This indicates that an individual can be husband of at most one other
- individual. The example also indicates the difference between 
-functionality and inverse functionality, as in a polygynous situation 
-the former axiom is valid whereas the latter isn't.
+<p>
+  这表明一个个体可以最多作为一个其他个体的丈夫。
+  这个例子同样展示了专一性和翻转专一性的区别，
+  比如在一夫多妻的情况下专一性成立而翻转专一性不成立。
 </p><p><span id="a_TransitiveObjectProperty"> </span>
-Now have a look at a property hasAncestor which is meant to link 
-individuals A and B whenever A is a direct descendant of B. Clearly, the
- property hasParent is a “special case” of hasAncestor and can be 
-defined as a subproperty thereof. Still, it would be nice to 
-"automatically" include parents of parents (and parents of parents of 
-parents). This can be done by defining hasAncestor as <i>transitive</i> 
-property. A transitive property interlinks two individuals A and C 
-whenever it interlinks A with B and B with C for some individual B.
+  接下来我们定义属性 hasAncestor （有祖先是...）可以连接两个个体 A 和 B，
+  其中 A 是 B 的直接后代。
+  显然，属性 hasParent 是 hasAncestor 的特殊情况，我们可以像先前那样定义为子属性。
+  但如果 hasAncestor 属性能够自动包括父母的父母（以及父母的父母的父母）将会很方便。
+  我们可以通过将 hasAncestor 定义为<i>可传递的</i>来实现这一功能。
+  可传递的属性会在 A 与 B 连接，B 与 C 连接时自动连接 A 与 C。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> TransitiveObjectProperty(&nbsp;:hasAncestor )
@@ -2517,11 +2506,13 @@ into local filesystems or on the World Wide Web.  Aside from containing
 an OWL ontology, OWL documents also contain information about 
 transforming the short names normally used in OWL ontologies (e.g., 
 Person) into IRIs, 
-by <span id="Anamespace">providing the expansion for prefixes</span>. The IRI is then the concatenation of the prefix expansion and the reference.
+by <span id="Anamespace">providing the expansion for prefixes</span>. 
+The IRI is then the concatenation of the prefix expansion and the reference.
 </p><p>In our example we have so far used a number of prefixes, including <span class="name">xsd</span>
  and the empty prefix. The former prefix has been used in compact names 
 for XML Schema datatypes, whose IRIs are fixed by the XML Schema 
-recommendation. We thus must use the standard expansion for <span class="name">xsd</span>, which is <span class="name">http://www.w3.org/2001/XMLSchema#</span>.
+recommendation. We thus must use the standard expansion for <span class="name">xsd</span>, 
+which is <span class="name">http://www.w3.org/2001/XMLSchema#</span>.
  The expansion we pick for the other prefix will affect the names of the
  classes, properties, and individuals in our ontology, as well as the 
 name of the ontology itself. If we are going to put the ontology on the 
