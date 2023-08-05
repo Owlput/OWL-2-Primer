@@ -115,7 +115,7 @@ OWL 2 <a href="http://www.w3.org/TR/2012/REC-owl2-overview-20121211/" title="Doc
 <h4 class="no-toc no-num" id="patents">专利相关</h4>
     
 <p><em>本文档由在<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>下运作的团体创作。
-  本文档仅供参考。W3C维护着一份与OWL Working Group相关的<a href="http://www.w3.org/2004/01/pp-impl/41712/status" rel="disclosure">已披露的专利的公开列表</a>。此页面也包括公开专利方面的指导。
+  本文档仅供参考。W3C维护着一份与OWL Working Group相关的<a href="http://www.w3.org/2004/01/pp-impl/41712/status" rel="disclosure">已披露专利的公开列表</a>。此页面也包括公开专利方面的指导。
 </em></p>
 
 <hr title="Separator After Status Section">
@@ -223,7 +223,7 @@ function set_display_by_id(id, newValue) {
 <ul>
 <li class="toclevel-2"><a href="#Classes_and_Instances"><span class="tocnumber">4.1</span> <span class="toctext">类及其实例</span></a></li>
 <li class="toclevel-2"><a href="#Class_Hierarchies"><span class="tocnumber">4.2</span> <span class="toctext">类的层次结构</span></a></li>
-<li class="toclevel-2"><a href="#Class_Disjointness"><span class="tocnumber">4.3</span> <span class="toctext">类的不交性</span></a></li>
+<li class="toclevel-2"><a href="#Class_Disjointness"><span class="tocnumber">4.3</span> <span class="toctext">类的互斥性</span></a></li>
 <li class="toclevel-2"><a href="#Object_Properties"><span class="tocnumber">4.4</span> <span class="toctext">对象的属性</span></a></li>
 <li class="toclevel-2"><a href="#Property_Hierarchies"><span class="tocnumber">4.5</span> <span class="toctext">属性的层次结构</span></a></li>
 <li class="toclevel-2"><a href="#Domain_and_Range_Restrictions"><span class="tocnumber">4.6</span> <span class="toctext">作用域和作用范围限制</span></a></li>
@@ -646,12 +646,12 @@ function set_display_by_id(id, newValue) {
 <p>
   声明“人”和“人类”等价意味着“人”是“人类”的子类，“人类”也是“人”的子类。
 </p>
-<a id="Class_Disjointness" name="Class_Disjointness"></a><h3> <span class="mw-headline">4.3 类的不交性</span></h3>
+<a id="Class_Disjointness" name="Class_Disjointness"></a><h3> <span class="mw-headline">4.3 类的互斥性</span></h3>
 <p><span id="a_DisjointClasses"> </span>
   在4.1节中，我们说一个个体可以是多个类的实例。然而，在某些情况下，类的成员资格是排他的。
   对于“男人”和“女人”类，我们知道，没有任何个体能同时是这两个类的实例（为了方便起见，我们不讨论正好在生理边界上的那些例子）。
-  这种类之间的“不兼容关系”被称为<i>（类的）不交性</i>（disjointness）。
-  与“女人”是“人”的子类这一关系一样，类之间的不交来自于我们的背景知识，
+  这种类之间的“不兼容关系”被称为<i>（类的）互斥性</i>（disjointness）。
+  与“女人”是“人”的子类这一关系一样，类之间的互斥来自于我们的背景知识，
   因而同样必须显示指出这样的关系才能让推理器利用这种关系。
   这可以通过下面的例子来实现：
 </p>
@@ -681,9 +681,9 @@ function set_display_by_id(id, newValue) {
 </pre>
 </div>
 <p>
-  在实践中，不交声明经常被遗漏或忽略。一种理由是，从直觉上说，除非额外声明，一个类与其他类都应该是不交的。
-  这样的结果是，许多有价值的结论可能会丢失。在我们给出的示例中，不交公理是推断Mary不是男人所必须的。
-  更进一步，如果给出了这样的不交公理，推理器便可以推测出“母亲”和“男人”的不交性。
+  在实践中，互斥声明经常被遗漏或忽略。一种理由是，从直觉上说，除非额外声明，一个类与其他类都应该是互斥的。
+  这样的结果是，许多有价值的结论可能会丢失。在我们给出的示例中，互斥公理是推断Mary不是男人所必须的。
+  更进一步，如果给出了这样的互斥公理，推理器便可以推测出“母亲”和“男人”的互斥性。
 </p>
 <a id="Object_Properties" name="Object_Properties"></a><h3> <span class="mw-headline">4.4 对象属性</span></h3>
 <p>
@@ -843,7 +843,7 @@ function set_display_by_id(id, newValue) {
 </p>
 <a id="Equality_and_Inequality_of_Individuals" name="Equality_and_Inequality_of_Individuals"></a><h3> <span class="mw-headline">4.7 个体间的相等和不等</span></h3>
 <p>
-  需要引起注意的是，从我们目前给出的信息来看，我们可以推测John和Mary不是同一个个体，因为他们分属于“男人”和“女人”这两个不交类的实例。
+  需要引起注意的是，从我们目前给出的信息来看，我们可以推测John和Mary不是同一个个体，因为他们分属于“男人”和“女人”这两个互斥类的实例。
   然而，如果我们再添加一位家庭成员的信息，比如Bill,并且声明他是男人，那目前为止，还不存在John和Bill不是同一个个体的声明。
   OWL 并不接受因为名字不同就认为是不同个体的假设。
   （这种“唯一名称假设”的缺失特别适用于语义Web应用，其中的不同名字可能被不同组织用来指代同一个个体。）
@@ -1012,7 +1012,7 @@ function set_display_by_id(id, newValue) {
 <a id="Advanced_Class_Relationships" name="Advanced_Class_Relationships"></a><h2> <span class="mw-headline">5 类关系进阶</span></h2>
 <p>
   在前面的章节里，我们将类视为某些带有名字的“不透明的”东西。我们使用它们来
-  表示个体的特征，并用子类或者不交声明来将它们与其他类联系起来。
+  表示个体的特征，并用子类或者互斥声明来将它们与其他类联系起来。
 </p><p>
   我们现在将展示如何使用带有名字的类、属性，和个体作为定义新类的基础。
 </p>
@@ -1877,8 +1877,8 @@ function set_display_by_id(id, newValue) {
   注意，不对称性比非对称更加严格。同样的，对称性比非不对称更加严格。
 </p><p><span id="a_DisjointObjectProperties"> </span>
   先前我们将子属性比作子类。
-  然而我们也可以把类的不交性带入属性中：如果两个属性不能连接两个相同的个体，
-  则这两个属性是不交的。
+  然而我们也可以把类的互斥性带入属性中：如果两个属性不能连接两个相同的个体，
+  则这两个属性是互斥的。
   根据常见的法律，我们可以这样声明父母和孩子不能结婚：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
@@ -2034,16 +2034,12 @@ function set_display_by_id(id, newValue) {
 </div>
 <a id="Property_Chains" name="Property_Chains"></a><h3> <span class="mw-headline">6.2 Property Chains</span></h3>
 <p><span id="a_SubObjectPropertyOfChain"> </span>
-While the last example from the previous section implied the presence of
- an hasAncestor property whenever there is a chain of hasParent 
-properties, we might want to be a bit more specific and define, say, a 
-hasGrandparent property instead. Technically, this means that we want 
-hasGrandparent to connect all individuals that are linked by a chain of 
-exactly two hasParent properties. In contrast to the previous 
-hasAncestor example, we do not want hasParent to be a special case of 
-hasGrandparent nor do we want hasGrandparent to refer to 
-great-grandparents etc. We can express that every such chain has to be 
-spanned by a hasGrandparent property as follows:
+  前面我们提到，hasAncestor 属性暗含于一串 hasParent 属性中。
+  但有时我们想要让这样的关系更加具体，比如创建一个 hasGrandparent（有祖父母是...）属性。
+  从技术角度来看，这意味着 hasGrandparent 属性将连接恰好经过两个 hasParent 连接的个体。
+  相较于 hasAncestor 与 hasParent，我们不希望 hasGrandparent 是 hasParent 属性的特例，
+  也不希望它连接曾祖父母。
+  我们可以这样限制 hasGrandparent 属性包含的属性链的长度：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SubObjectPropertyOf( 
@@ -2076,13 +2072,12 @@ spanned by a hasGrandparent property as follows:
  &lt;/SubObjectPropertyOf&gt;
 </pre>
 </div>
-<a id="Keys" name="Keys"></a><h3> <span class="mw-headline">6.3  Keys </span></h3>
+<a id="Keys" name="Keys"></a><h3> <span class="mw-headline">6.3  键 </span></h3>
 <p><span id="a_HasKey"> </span>
-In OWL 2 a collection of (data or object) properties can be assigned as a
- key to a class expression. This means that each named instance of the 
-class expression is uniquely identified by the set of values which these
- properties attain in relation to the instance. 
-</p><p>A simple example of this would be the identification of a person by her social security number.
+  在 OWL 2 中，一组（不论是数据还是对象）属性可以作为类表达式的键。
+  这意味着属于这个类的有名字的实例可以被该属性连接的值来唯一识别。
+</p><p>
+  比如一个人可以由其社会保障号码识别。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> HasKey(&nbsp;:Person () (&nbsp;:hasSSN ) )
@@ -2108,22 +2103,18 @@ class expression is uniquely identified by the set of values which these
  &lt;/HasKey&gt;
 </pre>
 </div>
-<a id="Advanced_Use_of_Datatypes" name="Advanced_Use_of_Datatypes"></a><h2> <span class="mw-headline">7 Advanced Use of Datatypes</span></h2>
-<p>In Section 4.8, we learned that individuals can be endowed with 
-numerical information, essentially by connecting them to a data value 
-via a datatype property – just like object properties link to other 
-domain individuals. In fact, these parallels extend to the more advanced
- features of datatype usage. 
-</p><p>First of all, data values are grouped into datatypes and we have 
-seen in Section 4.8 how a range restriction on a datatype property can 
-be used to indicate the kind of values this property can link to. 
-Moreover, it is possible to express and define new datatypes by 
-constraining or combining existing ones. 
+<a id="Advanced_Use_of_Datatypes" name="Advanced_Use_of_Datatypes"></a><h2> <span class="mw-headline">7 数据类型的进阶用法</span></h2>
+<p>
+  在4.8节中我们了解到个体可以被赋予数值信息，也就是使用数据属性将它们与数据值连接，
+  就像对象属性可以连接其他个体一样。
+  同样，数据属性和对象属性一样也存在类似的高级特性。
+</p><p>
+  首先，数据值都有一个数据类型。在4.8节中我们已经了解了范围限制能够表示
+  这个属性能够连接的值。更进一步，我们可以通过限制或组合已有的数据类型来
+  表达和创建新的数据类型。
 <span id="a_DatatypeRestriction"> </span>
-Datatypes can be restricted via so-called <i>facets</i>, borrowed from XML Schema Datatypes [<cite><a href="#ref-xml-schema-datatypes" title="">XML Schema Datatypes</a></cite>].
- In the following example, we define a new datatype for a person's age 
-by constraining the datatype integer to values between (inclusively) 0 
-and 150. 
+我们可以通过<i>限制面</i>（facets）来对数据类型做出限制，这一概念来自于 XML 数据类型[<cite><a href="#ref-xml-schema-datatypes" title="">XML Schema Datatypes</a></cite>]。
+在下面的例子中，我们通过限制整数类型的值为0到150（均包含）来为人的年龄创建一个数据类型
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> DatatypeDefinition(
@@ -2183,10 +2174,9 @@ and 150.
 <p><span id="a_DataComplementOf"> </span>
 <span id="a_DataIntersectionOf"> </span>
 <span id="a_DataUnionOf"> </span>
-Likewise, datatypes can be combined just like classes by complement, 
-intersection and union. Thereby, assuming we have already defined a 
-datatype minorAge, we can define the datatype majorAge by excluding all 
-data values of minorAge from personAge:
+  类似地，数据类型同样可以使用补集，交集和并集来组合。
+  假设我们已经定义了数据类型 minorAge（较小的年龄），那我们可以通过
+  排除 personAge 中的 minorAge 部分来声明 majorAge（较大的年龄）：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> DatatypeDefinition(
@@ -2238,7 +2228,7 @@ data values of minorAge from personAge:
 </pre>
 </div>
 <p><span id="a_DataOneOf"> </span>
-Moreover, a new datatype can be generated by just enumerating the data values it contains. 
+  我们也可以通过枚举全部可能值来声明一个新的数据类型。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> DatatypeDefinition(
@@ -2285,10 +2275,9 @@ Moreover, a new datatype can be generated by just enumerating the data values it
  &lt;/DatatypeDefinition&gt;
 </pre>
 </div>
-<p>In Section 6.1, we saw ways of characterizing object properties. Some
- of those are also available for datatype properties. For example, we 
-can express that every person has only one age by characterizing the 
-hasAge datatype property as functional:
+<p>
+  6.1节中我们介绍了对象属性的特征。类似地，我们也可以给数据属性赋予类似的特征。
+  我们可以给 hasAge 数据属性赋予专一性来表明一个人只能有最多一个年龄：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> FunctionalDataProperty(&nbsp;:hasAge ) 
@@ -2309,9 +2298,9 @@ hasAge datatype property as functional:
 &lt;/FunctionalDataProperty&gt;
 </pre>
 </div>
-<p>New classes can be defined by restrictions on datatype properties. 
-The following example defines the class teenager as all individuals 
-whose age is between 13 and 19 years.
+<p>
+  数据属性限制声明同样可以用于定义类。
+  下面我们定义年龄13到19岁的个体属于“青年”类：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SubClassOf(
@@ -2381,24 +2370,19 @@ whose age is between 13 and 19 years.
 &lt;/SubClassOf&gt;
 </pre>
 </div>
-<a id="Document_Information_and_Annotations" name="Document_Information_and_Annotations"></a><h2> <span class="mw-headline">8 Document Information and Annotations</span></h2>
-<p>In the following, we describe features of OWL 2 which do not actually
- contribute to the “logical” knowledge specified in the ontology. Rather
- these are used to provide additional information about the ontology 
-itself, axioms, or even single entities.
+<a id="Document_Information_and_Annotations" name="Document_Information_and_Annotations"></a><h2> <span class="mw-headline">8 文档信息和注释</span></h2>
+<p>
+  接下来我们将介绍 OWL 2 中与本体的逻辑推理无关的特性。
+  这些特性用于提供本体，公理甚至是单个实体的附加信息。
 </p>
-<a id="Annotating_Axioms_and_Entities" name="Annotating_Axioms_and_Entities"></a><h3> <span class="mw-headline">8.1 Annotating Axioms and Entities</span></h3>
+<a id="Annotating_Axioms_and_Entities" name="Annotating_Axioms_and_Entities"></a><h3> <span class="mw-headline">8.1 为公理和实体添加注释</span></h3>
 <p><span id="a_Annotation"> </span>
-In many cases, we want to furnish parts of our OWL ontology with 
-information that actually does not describe the domain itself but talks 
-about the description of the domain.  OWL provides <span id="Aannotation">annotations</span>
- for this purpose.  An OWL annotation simply associates property-value 
-pairs with parts of an ontology, or the entire ontology itself.  Even 
-annotations themselves can be annotated. Annotation information is not 
-really part of the logical meaning of an ontology.
+  在很多情况下，我们会想用与兴趣域定义无关而是介绍这一兴趣域的信息来完善
+  OWL 本体。OWL 提供<span id="Aannotation">注释</span>来行使这一功能。
+  一条 OWL 注释仅仅将本体的一部分或者整个本体与属性-值对联系起来。
+  注释也可以添加到另一条注释上。注释信息与本体的逻辑意义并无关系。
 </p><p><span id="a_AnnotationAssertion"> </span>
-So, for example, we could add information to one of the classes of our 
-ontology, giving a natural language description of its meaning.
+  例如，我们可以为一个类添加一段自然语言描述来解释其意义：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> AnnotationAssertion( rdfs:comment&nbsp;:Person "Represents the set of all people." )
@@ -2423,7 +2407,8 @@ ontology, giving a natural language description of its meaning.
  &lt;/AnnotationAssertion&gt;
 </pre>
 </div>
-<p>The following is an example of an axiom with an annotation.
+<p>
+  我们也可以为公理添加注释：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> SubClassOf( 
@@ -2466,13 +2451,14 @@ ontology, giving a natural language description of its meaning.
  &lt;/SubClassOf&gt;
 </pre>
 </div>
-<p>Often such annotations are used in tools to provide access to natural language text to be displayed in help interfaces.
+<p>
+  这样的注解常常用于在工具的帮助界面中显示自然语言文本。
 </p>
-<a id="Ontology_Management" name="Ontology_Management"></a><h3> <span class="mw-headline">8.2 Ontology Management</span></h3>
-<p>In OWL, general information about a topic is almost always gathered into an <span id="Aontology">ontology</span> that is then used by various applications.  We can also provide a <span id="Aontologyname">name for OWL ontologies</span>,
- which is generally the place where the ontology document is located in 
-the web. Particular information about a topic can also be placed in an 
-ontology, if it is used by different applications.
+<a id="Ontology_Management" name="Ontology_Management"></a><h3> <span class="mw-headline">8.2 本体管理</span></h3>
+<p>
+  在 OWL 中，一个话题的相关信息几乎总是被收录近一个本体中，然后被其他应用使用。
+  我们可以<span id="Aontologyname">对本体命名</span>，通常是本体在网络中的位置。
+  一个话题的其他具体信息也可以存储在本体中。
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> Ontology(&lt;http://example.com/owl/families&gt;
@@ -2583,10 +2569,8 @@ keywords are used.
 </pre>
 </div>
 <p><span id="a_imports"> </span>
-It is also common in OWL to reuse general information that is stored in 
-one ontology in other ontologies. Instead of requiring the copying of 
-this information, OWL allows the import of the contents of entire 
-ontologies in other ontologies, using import statements, as follows:
+  在 OWL 中复用来自其他本体的信息是很常见的。
+  与其把信息完全复制过来，我们也可以使用 import 声明完整导入另一个本体：
 </p>
 <div class="fssyntax"><div class="exampleheader"><span class="exampleheader"><b>函数式语法</b></span></div>
 <pre> Import( &lt;http://example.org/otherOntologies/families.owl&gt; )
@@ -2608,6 +2592,7 @@ ontologies in other ontologies, using import statements, as follows:
 </pre>
 </div>
 <p><br>
+  由于语义 Web 和本体的创建都是分散的，用不同名称指代同一概念，属性或个体的现象是很常见的。
 As the Semantic Web and ontology construction is distributed, it is 
 common for ontologies to use different names for the same concept, 
 property, or individual. As we have seen, several constructs in OWL can 
@@ -3106,10 +3091,12 @@ small extensions thereof, such as inverse properties and subproperty
 hierarchies. OWL 2 QL restricts class axioms asymmetrically, that is, 
 you can use constructs as the subclass that you cannot use as the 
 superclass.
-</p><p>Among other constructs, OWL 2 QL disallows existential 
+</p><p>
+  OWL 2 QL 不允许在类表达式中使用存在量化
+  Among other constructs, OWL 2 QL disallows existential 
 quantification of roles to a class expression, e.g. it can be stated 
 that every person has a parent but not that every person has a female 
-parent. Moreover property chain axioms and equality are not supported. 
+parent. 属性链公理和相等声明也不被支持。
 </p><p>The QL acronym reflects the fact that query answering in this 
 profile can be implemented by rewriting queries into a standard 
 relational Query Language [<cite><a href="#ref-DL-Lite" title="">DL-Lite</a></cite>].
@@ -3424,7 +3411,7 @@ children (if she has any) are female.
  &lt;/SubObjectPropertyOf&gt;
 </pre>
 </div>
-<a id="OWL_Tools" name="OWL_Tools"></a><h2> <span class="mw-headline">11 OWL Tools</span></h2>
+<a id="OWL_Tools" name="OWL_Tools"></a><h2> <span class="mw-headline">11 OWL 相关工具</span></h2>
 <p>In order to work with OWL ontologies, tool support is essential. 
 Basically, there are two types of tools addressing the two main stages 
 of the ontology lifecycle: <i>ontology editors</i> are used to create and edit ontologies, whereas <i>reasoners</i>
@@ -5223,10 +5210,10 @@ required, and the note detailing the optional dependency on the XSD 1.1 <a class
 <a id="Changes_Since_Last_Call" name="Changes_Since_Last_Call"></a><h3> <span class="mw-headline">14.3  Changes Since Last Call </span></h3>
 <p>This section summarizes the changes to this document since the <a class="external text" href="http://www.w3.org/TR/2009/WD-owl2-primer-20090611/" rel="nofollow" title="http://www.w3.org/TR/2009/WD-owl2-primer-20090611/">Last Call Working Draft of 11 June, 2009</a>.
 </p>
-<ul><li> Errors in some of the examples were fixed.
-</li><li> The example ontology was fixed so as to be consistent and syntactically correct.
-</li><li> A section on OWL 2 tools was added.
-</li><li> Various links to other OWL 2 documents were added.
+<ul><li> 修复了部分示例中的错误。
+</li><li> 修复了示例本体中的不一致错误和语法问题。
+</li><li> 添加了 OWL 2 工具 相关章节。
+</li><li> 添加了更多到其他 OWL 2 文档的链接。
 </li><li> A note was added pointing out that a property being asymmetric
  is a much stronger notion than its being non-symmetric, and that being 
 symmetric is a much stronger notion than being non-asymmetric.
@@ -5235,13 +5222,17 @@ symmetric is a much stronger notion than being non-asymmetric.
 </li><li> Several editorial clarifications and improvements, minor corrections and fixes, and cosmetic changes were made.
 </li></ul>
 </div>
-<a id="Acknowledgments" name="Acknowledgments"></a><h2> <span class="mw-headline">15  Acknowledgments </span></h2>
-<p>The starting point for the development of OWL 2 was the <a class="external text" href="http://www.w3.org/Submission/2006/10/" rel="nofollow" title="http://www.w3.org/Submission/2006/10/">OWL1.1 member submission</a>, itself a result of user and developer feedback, and in particular of information gathered during the <a class="external text" href="http://www.webont.org/owled/" rel="nofollow" title="http://www.webont.org/owled/">OWL Experiences and Directions (OWLED) Workshop series</a>. 
-  The working group also considered <a class="external text" href="http://www.w3.org/2001/sw/WebOnt/webont-issues.html" rel="nofollow" title="http://www.w3.org/2001/sw/WebOnt/webont-issues.html">postponed issues</a> from the <a class="external text" href="http://www.w3.org/2004/OWL/" rel="nofollow" title="http://www.w3.org/2004/OWL/">WebOnt Working Group</a>.
-</p><p>This document has been produced by the OWL Working Group (see 
-below), and its contents reflect extensive discussions within the 
-Working Group as a whole.
-The editors extend special thanks to
+<a id="Acknowledgments" name="Acknowledgments"></a><h2> <span class="mw-headline">15  致谢列表 </span></h2>
+<p>
+  OWL 2 的开发源于 <a class="external text" href="http://www.w3.org/Submission/2006/10/" rel="nofollow" title="http://www.w3.org/Submission/2006/10/">OWL1.1 成员提案</a>。
+  提案本身源于开发者反馈和
+  <a class="external text" href="http://www.webont.org/owled/" rel="nofollow" title="http://www.webont.org/owled/">OWL 体验和指导 (OWLED) Workshop 系列</a>
+  中收集到的信息。
+  工作组同样考虑到了来自<a class="external text" href="http://www.w3.org/2004/OWL/" rel="nofollow" title="http://www.w3.org/2004/OWL/">WebOnt Working Group</a>的
+  <a class="external text" href="http://www.w3.org/2001/sw/WebOnt/webont-issues.html" rel="nofollow" title="http://www.w3.org/2001/sw/WebOnt/webont-issues.html">遗留问题</a>。
+</p><p>
+  本文档由 OWL Working Group 创作，其内容反映整个 Working Group 内进行的大量讨论。
+  编辑对以下人员提供的审查和建议表示衷心感谢：
 Jie Bao (RPI),
 Michel Dumontier (Carleton University),
 Christine Goldbreich (Université de Versailles St-Quentin and LIRMM),
@@ -5255,8 +5246,8 @@ Alan Ruttenberg (Science Commons)
 Uli Sattler (University of Manchester),
 Michael Schneider (FZI), and
 Mike Smith (Clark &amp; Parsia)
-for their thorough reviews and helpful comments.
-</p><p>The regular attendees at meetings of the OWL Working Group at the time of publication of this document were:
+</p><p>
+  本文档发布时积极参与 OWL Working Group 会议的人员有：
 Jie Bao (RPI),
 Diego Calvanese (Free University of Bozen-Bolzano),
 Bernardo Cuenca Grau (Oxford University Computing Laboratory),
@@ -5283,12 +5274,12 @@ Mike Smith (Clark &amp; Parsia),
 Evan Wallace (NIST),
 Zhe Wu (Oracle Corporation), and
 Antoine Zimmermann (DERI Galway).
-We would also like to thank past members of the working group:
+我们同样想对以下曾经的工作组成员表示感谢：
 Jeremy Carroll,
-Jim Hendler, and
+Jim Hendler, 和
 Vipul Kashyap.
 </p>
-<a id="References" name="References"></a><h2> <span class="mw-headline">16  References </span></h2>
+<a id="References" name="References"></a><h2> <span class="mw-headline">16  参考文献 </span></h2>
 <dl><dt> <span id="ref-description-logics">[Description Logics]</span>
 </dt><dd> <a class="external text" href="http://www.cambridge.org/uk/catalogue/catalogue.asp?isbn=9780521876254" rel="nofollow" title="http://www.cambridge.org/uk/catalogue/catalogue.asp?isbn=9780521876254"><cite>The Description Logic Handbook: Theory, Implementation, and Applications, second edition</cite></a>.
  Franz Baader, Diego Calvanese, Deborah L. McGuinness, Daniele Nardi, 
